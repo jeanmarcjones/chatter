@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import '../styles/App.css'
-import * as PostAPI from '../utils/api_post'
+import * as SocketAPI from '../utils/api_socket'
 
 class App extends Component {
 
   componentDidMount() {
-    const data = { action: "post", data: "Hello Post!" }
 
-    PostAPI
-      .post(data)
-      .then(res => console.log(res))
+    const user = { name: 'Mr World' }
+
+    SocketAPI
+      .join(user)
+
+    SocketAPI
+      .update()
   }
 
   render() {
