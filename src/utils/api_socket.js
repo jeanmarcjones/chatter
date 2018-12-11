@@ -7,3 +7,6 @@ export const join = (data) =>
     ...API.user,
     name: data.name,
   })
+
+export const update = () =>
+  socket.on('update', (update) => console.log(update))
