@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/App.css'
 import * as SocketAPI from '../utils/api_socket'
+import Login from '../components/Login'
 
 class App extends Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>Hello World!</p>
+        <Login />
       </div>
     )
   }
