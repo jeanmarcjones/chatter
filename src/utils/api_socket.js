@@ -12,3 +12,6 @@ export const join = (data) =>
 
 export const update = () =>
   socket.on('update', (update) => console.log(update))
+
+export const isConnected = () =>
+  socket.connected
