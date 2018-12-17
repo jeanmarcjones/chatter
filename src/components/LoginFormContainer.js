@@ -12,7 +12,7 @@ class LoginFormContainer extends Component {
     e.preventDefault()
     SocketAPI
       .join({
-        name: this.username.value
+        value: this.username.value
       }, () => this.setState(() => ({
         toChat: true
       })))
