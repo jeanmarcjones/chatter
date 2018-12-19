@@ -9,6 +9,6 @@ export const headers = {
   Accept: 'application/json'
 }
 
-export const user = {
+export const socketHeaders = {
   id: token
 }
