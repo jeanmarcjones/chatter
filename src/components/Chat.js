@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import '../styles/buttons.css'
 import * as SocketAPI from '../utils/api_socket'
 
 class Chat extends Component {
@@ -10,6 +11,7 @@ class Chat extends Component {
     return (
       <div>
         <p>Hello Chatter!</p>
+        <button className='button' onClick={this.handleDisconnect}>Disconnect</button>
       </div>
     )
   }
