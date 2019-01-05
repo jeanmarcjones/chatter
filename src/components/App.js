@@ -18,12 +18,12 @@ class App extends Component {
           <Route
             exact
             path='/'
-            render={() => (<Chat />)}
+            component={Chat}
           />
           <Route
             exact
             path='/login'
-            render={() => (<Login />)}
+            component={Login}
           />
         </Switch>
       </div>
