@@ -1,4 +1,4 @@
-export const url = process.env.REACT_APP_READABLE_API_URL || 'http://localhost:3001'
+export const url = process.env.SOCKET_API_URL || 'http://localhost:3001'
 
 let token = localStorage.token
 
