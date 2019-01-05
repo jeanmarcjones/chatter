@@ -12,6 +12,12 @@ export const join = (username, callback) => {
   socket.on('joined', callback)
 }
 
+export const leave = () =>
+  socket.emit('leave', {
+    ...API.socketHeaders
+  })
+
+
 export const update = () =>
   socket.on('update', (update) => console.log(update))
 
