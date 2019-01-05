@@ -12,10 +12,12 @@ export const join = (username, callback) => {
   socket.on('joined', callback)
 }
 
-export const leave = () =>
+export const leave = (callback) => {
   socket.emit('leave', {
     ...API.headers
   })
+  socket.on('disconnected', callback)
+}
 
 
 export const update = () =>
