@@ -7,7 +7,7 @@ const socket = openSocket(API.url, {
 export const join = (username, callback) => {
   socket.emit('join', {
     ...API.socketHeaders,
-    name: username.value,
+    name: username.value
   })
   socket.on('joined', callback)
 }
