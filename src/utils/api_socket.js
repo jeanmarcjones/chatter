@@ -6,7 +6,7 @@ const socket = openSocket(API.url, {
 
 export const join = (username, callback) => {
   socket.emit('join', {
-    ...API.socketHeaders,
+    ...API.headers,
     name: username.value
   })
   socket.on('joined', callback)
@@ -14,7 +14,7 @@ export const join = (username, callback) => {
 
 export const leave = () =>
   socket.emit('leave', {
-    ...API.socketHeaders
+    ...API.headers
   })
 
 
