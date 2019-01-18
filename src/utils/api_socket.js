@@ -1,8 +1,6 @@
 import openSocket from 'socket.io-client'
 import * as API from './api'
-const socket = openSocket(API.url, {
-  reconnection: false
-})
+const socket = openSocket(API.url)
 
 export const join = (username, callback) => {
   socket.emit('join', {
@@ -18,7 +16,6 @@ export const leave = (callback) => {
   })
   socket.on('disconnected', callback)
 }
-
 
 export const update = () =>
   socket.on('update', (update) => console.log(update))
