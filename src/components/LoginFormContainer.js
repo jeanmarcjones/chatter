@@ -1,34 +1,41 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import * as SocketAPI from '../utils/api_socket'
-import LoginForm from "./LoginForm"
+import LoginForm from './LoginForm'
+import { connectUser } from '../actions/user'
 
 class LoginFormContainer extends Component {
-  state = {
-    toChat: false
-  }
-
   handleFormSubmit = (e) => {
+    const { props, username } = this
+
     e.preventDefault()
-    SocketAPI
-      .join({
-        value: this.username.value
-      }, () => this.setState(() => ({
-        toChat: true
-      })))
+    props.logIn({ name: username.value })
   }
 
   render() {
-    if (this.state.toChat === true)
-      return <Redirect to='/' />
+    const { props: { user }, handleFormSubmit } = this
+
+    if (user.loggedIn === true)
+      return <Redirect to='/'/>
 
     return (
       <LoginForm
-        handleFormSubmit={this.handleFormSubmit}
+        handleFormSubmit={handleFormSubmit}
         username={input => this.username = input}
       />
     )
   }
 }
 
-export default LoginFormContainer
+const mapStateToProps = ({ user }) => ({
+  user: user
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  logIn: (data) => dispatch(connectUser(data))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginFormContainer)
