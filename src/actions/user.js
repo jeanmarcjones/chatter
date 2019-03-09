@@ -22,3 +22,12 @@ export const connectUser = ({ name }) => (dispatch) => {
     dispatch(updateUser({ user: { loggedIn: true } }))
   })
 }
+
+export const disconnectUser = () => (dispatch) => {
+  socket.emit('leave', {
+    ...API.headers
+  })
+  socket.on('disconnected', () => {
+    dispatch(updateUser({ user: {loggedIn: false} }))
+  })
+}
