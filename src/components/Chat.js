@@ -1,31 +1,36 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import { disconnectUser } from '../actions/user'
 import '../styles/buttons.css'
-import * as SocketAPI from '../utils/api_socket'
 
-class Chat extends Component {
-  state = {
-    toLogin: false
+let Chat = ({ user, logOut }) => {
+  const handleDisconnect = () => {
+    logOut()
   }
 
-  handleDisconnect = () => {
-    SocketAPI
-      .leave(() => this.setState(() => ({
-        toLogin: true
-      })))
-  }
-
-  render() {
-    if (SocketAPI.isConnected() === false || this.state.toLogin === true)
+    if (user.loggedIn === false)
       return <Redirect to='/login' />
 
     return (
       <div>
         <p>Hello Chatter!</p>
-        <button className='button' onClick={this.handleDisconnect}>Disconnect</button>
+        <button className='button' onClick={handleDisconnect}>
+          Disconnect
+        </button>
       </div>
     )
-  }
 }
 
-export default Chat
+const mapStateToProps = ({ user }) => ({
+  user: user
+})
+
+const mapDispatchToProps = () => (dispatch) => ({
+  logOut: (data) => (dispatch(disconnectUser(data)))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Chat)
