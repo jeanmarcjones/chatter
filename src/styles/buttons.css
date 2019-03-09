@@ -5,3 +5,9 @@
   width: 200px;
   cursor: pointer;
 }
+
+.button--disconnect {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+}
