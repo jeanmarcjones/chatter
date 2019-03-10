@@ -13,4 +13,4 @@ Run these commands to get started:
 
 ### Todo
 
-- [ ] Write TODO
+- [ ] Add socket.io middleware
