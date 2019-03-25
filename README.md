@@ -14,3 +14,8 @@ Run these commands to get started:
 ### Todo
 
 - [ ] Add socket.io middleware
+- [ ] Use prop types
+- [ ] Move store to separate file
+- [ ] Move routes to separate file
+- [ ] Create button partial
+- [ ] Create mobile views and app
