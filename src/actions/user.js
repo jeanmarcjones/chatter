@@ -1,13 +1,11 @@
 import openSocket from 'socket.io-client'
 import * as API from '../utils/api'
-import {
-  UPDATE_USER
-} from './types'
+import { userConstants } from '../constants'
 
 let socket
 
 export const updateUser = ({ user }) => ({
-  type: UPDATE_USER,
+  type: userConstants.UPDATE_USER,
   user
 })
 
@@ -28,6 +26,8 @@ export const disconnectUser = () => (dispatch) => {
     ...API.headers
   })
   socket.on('disconnected', () => {
-    dispatch(updateUser({ user: {loggedIn: false} }))
+    dispatch(updateUser({ user: { loggedIn: false } }))
   })
 }
+
+export default socket
