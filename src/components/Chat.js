@@ -10,8 +10,8 @@ let Chat = ({ user, logOut }) => {
     logOut()
   }
 
-    if (user.loggedIn === false)
-      return <Redirect to='/login' />
+  if (user.loggedIn === false)
+    return <Redirect to='/login' />
 
     return (
       <div>

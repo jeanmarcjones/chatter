@@ -1,6 +1,9 @@
 import { messageConstants } from '../constants'
 
-const initialState = {}
+const initialState = {
+  byId: {},
+  allIds: []
+}
 
 export default function message(state = initialState, action) {
   const { message } = action
@@ -9,7 +12,11 @@ export default function message(state = initialState, action) {
     case messageConstants.ADD_MESSAGE :
       return {
         ...state,
-        [message.id]: message
+        byId: {
+          ...state.byId,
+          [message.id]: message
+        },
+        allIds: [...state.allIds, message.id]
       }
     default:
       return state
