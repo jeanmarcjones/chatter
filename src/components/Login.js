@@ -3,7 +3,7 @@ import '../styles/Login.css'
 import LoginFormContainer from './LoginFormContainer'
 
 let Login = () => {
-  return(
+  return (
     <div>
       <h1>Chatter</h1>
       <p>Please choose a username.</p>
