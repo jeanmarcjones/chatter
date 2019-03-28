@@ -1,4 +1,10 @@
+import openSocket from 'socket.io-client'
+
 export const url = process.env.SOCKET_API_URL || 'http://localhost:3001'
+
+export const connect = () => openSocket(url)
+
+export let socket = connect()
 
 let token = localStorage.token
 
