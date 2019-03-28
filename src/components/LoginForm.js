@@ -5,7 +5,7 @@ import '../styles/buttons.css'
 let LoginForm = ({ handleFormSubmit, username }) => {
   return (
     <form
-      className='form form--login'
+      className='form--login'
       onSubmit={handleFormSubmit}
     >
       <input type='text'
