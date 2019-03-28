@@ -14,3 +14,8 @@ if (!token)
 export const headers = {
   id: token
 }
+
+// Reconnects client to server
+export const reconnect = () => {
+  socket = connect()
+}

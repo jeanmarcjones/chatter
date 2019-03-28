@@ -1,4 +1,3 @@
-import openSocket from 'socket.io-client'
 import * as API from '../utils/api'
 import { userConstants } from '../constants'
 
@@ -8,9 +7,11 @@ export const updateUser = ({ user }) => ({
 })
 
 export const connectUser = ({ name }) => (dispatch) => {
-  socket = openSocket(API.url)
-
-  socket.emit('join', {
+  // Checks if client is connected to server
+  if (!API.socket.connected) {
+    API.reconnect()
+  }
+  API.socket.emit('join', {
     ...API.headers,
     name
   })
