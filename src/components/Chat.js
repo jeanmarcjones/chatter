@@ -5,7 +5,7 @@ import { disconnectUser } from '../actions/user'
 import ChatFormContainer from './ChatFormContainer'
 import MessageListContainer from './MessageListContainer'
 import '../styles/Chat.css'
-import '../styles/buttons.css'
+import '../styles/Buttons.css'
 
 let Chat = ({ user, logOut }) => {
   const handleDisconnect = () => {

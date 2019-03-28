@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/LoginForm.css'
-import '../styles/buttons.css'
+import '../styles/Buttons.css'
 
 let LoginForm = ({ handleFormSubmit, username }) => {
   return (
