@@ -7,8 +7,8 @@ export const addMessage = ({ message }) => ({
 })
 
 export const sendMessage = ({ message }) => (dispatch) => {
-  API.socket.emit('message', message)
-  API.socket.on('message', (message) => {
+  API.socket.emit('postMessage', message)
+  API.socket.on('broadcastMessage', (message) => {
     dispatch(addMessage({
       message
     }))
