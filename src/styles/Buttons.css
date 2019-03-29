@@ -7,7 +7,7 @@
 }
 
 .button--disconnect {
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 12px;
 }
