@@ -17,8 +17,8 @@ let Chat = ({ user, logOut }) => {
 
   return (
     <div className='container--flex-column'>
-      <MessageListContainer/>
-      <ChatFormContainer/>
+      <MessageListContainer />
+      <ChatFormContainer />
       <button className='button button--disconnect' onClick={handleDisconnect}>
         Disconnect
       </button>

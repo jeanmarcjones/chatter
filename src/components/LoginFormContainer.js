@@ -16,7 +16,7 @@ class LoginFormContainer extends Component {
     const { props: { user }, handleFormSubmit } = this
 
     if (user.loggedIn === true)
-      return <Redirect to='/'/>
+      return <Redirect to='/' />
 
     return (
       <LoginForm
