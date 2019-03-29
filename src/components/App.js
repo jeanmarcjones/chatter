@@ -5,20 +5,18 @@ import Chat from '../components/Chat'
 
 let App = () => {
   return (
-    <div className='App'>
-      <Switch>
-        <Route
-          exact
-          path='/'
-          component={Chat}
-        />
-        <Route
-          exact
-          path='/login'
-          component={Login}
-        />
-      </Switch>
-    </div>
+    <Switch>
+      <Route
+        exact
+        path='/'
+        component={Chat}
+      />
+      <Route
+        exact
+        path='/login'
+        component={Login}
+      />
+    </Switch>
   )
 }
 
