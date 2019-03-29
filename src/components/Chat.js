@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom'
 import { disconnectUser } from '../actions/user'
 import ChatFormContainer from './ChatFormContainer'
 import MessageListContainer from './MessageListContainer'
-import '../styles/Chat.css'
+import '../styles/Container.css'
 import '../styles/Buttons.css'
 
 let Chat = ({ user, logOut }) => {
@@ -16,7 +16,7 @@ let Chat = ({ user, logOut }) => {
     return <Redirect to='/login' />
 
   return (
-    <div>
+    <div className='container--flex-column'>
       <MessageListContainer/>
       <ChatFormContainer/>
       <button className='button button--disconnect' onClick={handleDisconnect}>
