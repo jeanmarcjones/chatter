@@ -16,8 +16,8 @@ Run these commands to get started:
 - [ ] Add socket.io middleware
 - [ ] Use prop types
 - [x] Move store to separate file
-- [ ] Move routes to separate file
-- [ ] Create button partial
+- [x] Reduce unused divs
 - [ ] Create mobile views and app
 - [ ] Consolidate components?
 - [ ] Input partial
+- [ ] Keep message window scrolled to bottom
