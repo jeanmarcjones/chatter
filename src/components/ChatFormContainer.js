@@ -7,9 +7,7 @@ import * as API from '../utils/api'
 
 class ChatFormContainer extends Component {
   componentWillMount() {
-    const { props } = this
-
-    props.subscribeToMessages()
+    this.props.subscribeToMessages()
   }
 
   componentDidMount() {
