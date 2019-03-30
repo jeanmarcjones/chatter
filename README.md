@@ -13,7 +13,7 @@ Run these commands to get started:
 
 ### Todo
 
-- [ ] Add socket.io middleware
+- [x] Add socket.io middleware
 - [ ] Use prop types
 - [x] Move store to separate file
 - [x] Reduce unused divs
