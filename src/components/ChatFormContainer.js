@@ -12,6 +12,10 @@ class ChatFormContainer extends Component {
     props.subscribeToMessages()
   }
 
+  componentDidMount() {
+    this.message.focus()
+  }
+
   handleFormSubmit = (e) => {
     const { message } = this
 

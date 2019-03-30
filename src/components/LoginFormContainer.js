@@ -5,6 +5,10 @@ import LoginForm from './LoginForm'
 import { connectUser } from '../actions/user'
 
 class LoginFormContainer extends Component {
+  componentDidMount() {
+    this.username.focus()
+  }
+
   handleFormSubmit = (e) => {
     const { props, username } = this
 
