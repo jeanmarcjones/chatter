@@ -1,15 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { sendMessage } from '../actions/message'
+import { subscribeToMessages } from '../actions/message'
 import ChatForm from './ChatForm'
 import { uuid } from '../utils/helpers'
+import * as API from '../utils/api'
 
 class ChatFormContainer extends Component {
+  componentWillMount() {
+    const { props } = this
+
+    props.subscribeToMessages()
+  }
+
   handleFormSubmit = (e) => {
-    const { props, message } = this
+    const { message } = this
 
     e.preventDefault()
-    props.sendMessage({
+    API.socket.emit('postMessage', {
       message: {
         id: uuid(),
         text: message.value
@@ -29,7 +36,7 @@ class ChatFormContainer extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  sendMessage: (data) => dispatch(sendMessage(data))
+  subscribeToMessages: (data) => dispatch(subscribeToMessages(data))
 })
 
 export default connect(

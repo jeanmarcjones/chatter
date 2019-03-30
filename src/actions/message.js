@@ -1,4 +1,3 @@
-import * as API from '../utils/api'
 import { messageConstants } from '../constants'
 
 export const addMessage = ({ message }) => ({
@@ -6,11 +5,12 @@ export const addMessage = ({ message }) => ({
   message
 })
 
-export const sendMessage = ({ message }) => (dispatch) => {
-  API.socket.emit('postMessage', message)
-  API.socket.on('broadcastMessage', (message) => {
-    dispatch(addMessage({
+export const subscribeToMessages = () => (dispatch) => {
+  dispatch({
+    event: 'broadcastMessage',
+    handle: message => dispatch({
+      type: messageConstants.ADD_MESSAGE,
       message
-    }))
+    })
   })
 }
