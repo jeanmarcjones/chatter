@@ -1,7 +1,8 @@
 import { userConstants } from '../constants'
 
 const initialState = {
-  loggedIn: false
+  loggedIn: false,
+  name: ''
 }
 
 export default function user(state = initialState, action) {

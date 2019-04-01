@@ -16,7 +16,10 @@ export const connectUser = ({ name }) => (dispatch) => {
     name
   })
   API.socket.on('joined', () => {
-    dispatch(updateUser({ user: { loggedIn: true } }))
+    dispatch(updateUser({ user: {
+      loggedIn: true,
+      name: name
+    } }))
   })
 }
 
