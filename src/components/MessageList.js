@@ -6,7 +6,10 @@ let MessageList = ({ messages }) => {
     <ul className='messages'>
       {
         messages.map((message, i) => (
-        <li key={i}>
+        <li
+          key={i}
+          className={message.type}
+        >
           {`${message.name}: ${message.text}`}
         </li>
       ))}

@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addMessage, subscribeToMessages } from '../actions/message'
+import { addMessage, subscribeToMessages, subscribeToUpdates } from '../actions/message'
 import ChatForm from './ChatForm'
 import { uuid } from '../utils/helpers'
 import * as API from '../utils/api'
 
 class ChatFormContainer extends Component {
   componentWillMount() {
-    this.props.subscribeToMessages()
+    const { props } = this
+
+    props.subscribeToMessages()
+    props.subscribeToUpdates()
   }
 
   componentDidMount() {
@@ -18,6 +21,7 @@ class ChatFormContainer extends Component {
     const { message, props: { name, addMessage } } = this
     let data = {
       id: uuid(),
+      type: 'message',
       text: message.value,
       name
     }
@@ -51,7 +55,8 @@ const mapStateToProps = ({ user }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   addMessage: (data) => dispatch(addMessage(data)),
-  subscribeToMessages: (data) => dispatch(subscribeToMessages(data))
+  subscribeToMessages: (data) => dispatch(subscribeToMessages(data)),
+  subscribeToUpdates: (data) => dispatch(subscribeToUpdates(data))
 })
 
 export default connect(

@@ -14,3 +14,13 @@ export const subscribeToMessages = () => (dispatch) => {
     })
   })
 }
+
+export const subscribeToUpdates = () => (dispatch) => {
+  dispatch({
+    event: 'update',
+    handle: message => dispatch({
+      type: messageConstants.ADD_MESSAGE,
+      message
+    })
+  })
+}
