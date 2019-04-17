@@ -17,7 +17,6 @@ Run these commands to get started:
 - [ ] Use prop types
 - [x] Move store to separate file
 - [x] Reduce unused divs
-- [ ] Create mobile views and app
-- [ ] Consolidate components?
 - [ ] Input partial
-- [ ] Keep message window scrolled to bottom
+- [x] Keep message window scrolled to bottom
+- [ ] Create mobile views and app

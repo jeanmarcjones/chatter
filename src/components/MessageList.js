@@ -1,9 +1,12 @@
 import React from 'react'
 import '../styles/Messages.css'
 
-let MessageList = ({ messages }) => {
+let MessageList = ({ messages, messageList }) => {
   return (
-    <ul className='messages'>
+    <ul
+      ref={messageList}
+      className='messages'
+    >
       {
         messages.map((message, i) => (
         <li
