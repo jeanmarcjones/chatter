@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import Login from '../components/Login'
 import Chat from '../components/Chat'
 
-let App = () => {
+const App = () => {
   return (
     <Switch>
       <Route

@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/ChatForm.css'
 import '../styles/Buttons.css'
 
-let ChatForm = ({ handleFormSubmit, message }) => {
+const ChatForm = ({ handleFormSubmit, message }) => {
   return (
     <form
       className='form--chat'

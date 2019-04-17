@@ -5,7 +5,7 @@ import LoginFormContainer from './LoginFormContainer'
 import '../styles/Login.css'
 import '../styles/Container.css'
 
-let Login = ({ user }) => {
+const Login = ({ user }) => {
   if (user.loggedIn === true)
     return <Redirect to='/' />
 

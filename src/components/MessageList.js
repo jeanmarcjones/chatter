@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Messages.css'
 
-let MessageList = ({ messages, messageList }) => {
+const MessageList = ({ messages, messageList }) => {
   return (
     <ul
       ref={messageList}

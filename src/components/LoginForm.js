@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/LoginForm.css'
 import '../styles/Buttons.css'
 
-let LoginForm = ({ handleFormSubmit, username }) => {
+const LoginForm = ({ handleFormSubmit, username }) => {
   return (
     <form
       className='form--login'

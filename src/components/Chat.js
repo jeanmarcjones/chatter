@@ -7,7 +7,7 @@ import MessageListContainer from './MessageListContainer'
 import '../styles/Container.css'
 import '../styles/Buttons.css'
 
-let Chat = ({ user, logOut }) => {
+const Chat = ({ user, logOut }) => {
   const handleDisconnect = () => {
     logOut()
   }

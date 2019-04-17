@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import LoginForm from './LoginForm'
 import { connectUser } from '../actions/user'
 
-let LoginFormContainer = ({ logIn }) => {
+const LoginFormContainer = ({ logIn }) => {
   const text = useRef(null)
 
   useEffect(() => {
