@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import LoginForm from './LoginForm'
 import { connectUser } from '../actions/user'
 
@@ -17,10 +16,7 @@ class LoginFormContainer extends Component {
   }
 
   render() {
-    const { props: { user }, handleFormSubmit } = this
-
-    if (user.loggedIn === true)
-      return <Redirect to='/' />
+    const { handleFormSubmit } = this
 
     return (
       <LoginForm
@@ -31,15 +27,11 @@ class LoginFormContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  user: user
-})
-
 const mapDispatchToProps = (dispatch) => ({
   logIn: (data) => dispatch(connectUser(data))
 })
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(LoginFormContainer)
