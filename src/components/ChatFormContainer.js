@@ -1,52 +1,44 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { connect } from 'react-redux'
 import { addMessage, subscribeToMessages, subscribeToUpdates } from '../actions/message'
 import ChatForm from './ChatForm'
 import { uuid } from '../utils/helpers'
 import * as API from '../utils/api'
 
-class ChatFormContainer extends Component {
-  componentWillMount() {
-    const { props } = this
+const ChatFormContainer = ({ name, addMessage, subscribeToUpdates, subscribeToMessages }) => {
+  const text = useRef(null)
 
-    props.subscribeToMessages()
-    props.subscribeToUpdates()
-  }
+  useEffect(() => {
+    subscribeToMessages()
+    subscribeToUpdates()
 
-  componentDidMount() {
-    this.message.focus()
-  }
+    text.current.focus()
+  })
 
-  handleFormSubmit = (e) => {
-    const { message, props: { name, addMessage } } = this
-    let data = {
+  const handleFormSubmit = (e) => {
+    let message = {
       id: uuid(),
       type: 'message',
-      text: message.value,
+      text: text.current.value,
       name
     }
 
     e.preventDefault()
-    API.socket.emit('postMessage', {
-      message: {
-        ...data
-      }
-    })
+    API.socket.emit('postMessage', { message: {
+      ...message
+    }})
     addMessage({ message: {
-        ...data
-      }
-    })
-    message.value = ''
+      ...message
+    }})
+    text.current.value = ''
   }
 
-  render() {
-    return (
-      <ChatForm
-        handleFormSubmit={this.handleFormSubmit}
-        message={(input) => this.message = input }
-      />
-    )
-  }
+  return (
+    <ChatForm
+      handleFormSubmit={handleFormSubmit}
+      message={text}
+    />
+  )
 }
 
 const mapStateToProps = ({ user }) => ({
