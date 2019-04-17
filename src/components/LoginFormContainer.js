@@ -1,30 +1,26 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { connect } from 'react-redux'
 import LoginForm from './LoginForm'
 import { connectUser } from '../actions/user'
 
-class LoginFormContainer extends Component {
-  componentDidMount() {
-    this.username.focus()
-  }
+let LoginFormContainer = ({ logIn }) => {
+  const text = useRef(null)
 
-  handleFormSubmit = (e) => {
-    const { props, username } = this
+  useEffect(() => {
+    text.current.focus()
+  })
 
+  const handleFormSubmit = (e) => {
     e.preventDefault()
-    props.logIn({ name: username.value })
+    logIn({ name: text.current.value })
   }
 
-  render() {
-    const { handleFormSubmit } = this
-
-    return (
-      <LoginForm
-        handleFormSubmit={handleFormSubmit}
-        username={input => this.username = input}
-      />
-    )
-  }
+  return (
+    <LoginForm
+      handleFormSubmit={handleFormSubmit}
+      username={text}
+    />
+  )
 }
 
 const mapDispatchToProps = (dispatch) => ({
