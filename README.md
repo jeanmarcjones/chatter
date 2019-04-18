@@ -1,6 +1,6 @@
 # Chatter
 
-Front end app for a chat room sever.
+Front-end app for a chat room sever.
 
 ### Usage
 
