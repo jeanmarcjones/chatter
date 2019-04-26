@@ -29,3 +29,11 @@ You will need to run a local node server for this app to work, it can be downloa
 - [ ] Input partial
 - [x] Keep message window scrolled to bottom
 - [ ] Create mobile views and app
+
+### Contributing
+
+This repository is a personal project. Therefore, pull requests will not be accepted.
+
+### Licence
+
+This project is licensed under the Unlicense license.
