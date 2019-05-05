@@ -1,6 +1,4 @@
 import React from 'react'
-import '../styles/ChatForm.css'
-import '../styles/Buttons.css'
 
 const ChatForm = ({ handleFormSubmit, message }) => {
   return (

@@ -4,8 +4,6 @@ import { Redirect } from 'react-router-dom'
 import { disconnectUser } from '../actions/user'
 import ChatFormContainer from './ChatFormContainer'
 import MessageListContainer from './MessageListContainer'
-import '../styles/Container.css'
-import '../styles/Buttons.css'
 
 const Chat = ({ user, logOut }) => {
   const handleDisconnect = () => {

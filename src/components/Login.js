@@ -2,8 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import LoginFormContainer from './LoginFormContainer'
-import '../styles/Login.css'
-import '../styles/Container.css'
 
 const Login = ({ user }) => {
   if (user.loggedIn === true)

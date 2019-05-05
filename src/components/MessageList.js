@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/Messages.css'
 
 const MessageList = ({ messages, messageList }) => {
   return (
