@@ -8,10 +8,12 @@ const Login = ({ user }) => {
     return <Redirect to='/' />
 
   return (
-    <div className='login container--full-screen'>
-      <h1>Chatter</h1>
-      <p>Please choose a username.</p>
-      <LoginFormContainer />
+    <div className='login'>
+      <div className='container'>
+        <h1 className='login__title'>Chatter</h1>
+        <p>Please choose a username.</p>
+        <LoginFormContainer />
+      </div>
     </div>
   )
 }
