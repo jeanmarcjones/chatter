@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import Login from '../components/Login'
 import Chat from '../components/Chat'
 
-const App = () => {
+const ChatterApp = () => {
   return (
     <Switch>
       <Route
@@ -20,4 +20,4 @@ const App = () => {
   )
 }
 
-export default App
+export default ChatterApp

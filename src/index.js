@@ -4,14 +4,14 @@ import { Provider } from 'react-redux'
 import { Router } from 'react-router-dom'
 import history from './history'
 import store from './store'
-import App from './components/App'
+import ChatterApp from './components/ChatterApp'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <App />
+      <ChatterApp />
     </Router>
   </Provider>,
   document.getElementById('root')
