@@ -3,20 +3,19 @@ import React from 'react'
 const ChatForm = ({ handleFormSubmit, message }) => {
   return (
     <form
-      className='form--chat'
+      className='form send-message'
       onSubmit={handleFormSubmit}
     >
       <input
         type='text'
         ref={message}
+        className='input'
         autoComplete='off'
         required
       />
-      <input
-        type='submit'
-        value='submit'
-        className='button'
-      />
+      <button className='button'>
+        Send Message
+      </button>
     </form>
   )
 }

@@ -3,13 +3,13 @@ import React from 'react'
 const LoginForm = ({ handleFormSubmit, username }) => {
   return (
     <form
-      className='login__form'
+      className='form'
       onSubmit={handleFormSubmit}
     >
       <input
         type='text'
         ref={username}
-        className='login__input'
+        className='input'
         autoComplete='off'
         required
       />
