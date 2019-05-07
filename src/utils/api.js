@@ -1,10 +1,11 @@
-import openSocket from 'socket.io-client'
+import io from 'socket.io-client'
 
-export const url = process.env.SOCKET_API_URL || 'http://localhost:3001'
+const url = process.env.SOCKET_API_URL || 'http://localhost:3001'
+const options = {
+  'reconnectionAttempts': 5
+}
 
-export const connect = () => openSocket(url)
-
-export let socket = connect()
+export let socket = io.connect(url, options)
 
 let token = localStorage.token
 
@@ -17,5 +18,5 @@ export const headers = {
 
 // Reconnects client to server
 export const reconnect = () => {
-  socket = connect()
+  socket = io.connect(url, options)
 }
