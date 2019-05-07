@@ -15,14 +15,14 @@ const Chat = ({ user, logOut }) => {
 
   return (
     <div className='column'>
-      <MessageListContainer />
-      <ChatFormContainer />
       <button
         className='button button--disconnect'
         onClick={handleDisconnect}
       >
         Disconnect
       </button>
+      <MessageListContainer />
+      <ChatFormContainer />
     </div>
   )
 }
