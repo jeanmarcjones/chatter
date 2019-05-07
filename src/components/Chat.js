@@ -14,10 +14,13 @@ const Chat = ({ user, logOut }) => {
     return <Redirect to='/login' />
 
   return (
-    <div className='container--flex-column'>
+    <div className='column'>
       <MessageListContainer />
       <ChatFormContainer />
-      <button className='button button--disconnect' onClick={handleDisconnect}>
+      <button
+        className='button button--disconnect'
+        onClick={handleDisconnect}
+      >
         Disconnect
       </button>
     </div>
