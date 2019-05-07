@@ -13,10 +13,9 @@ const LoginForm = ({ handleFormSubmit, username }) => {
         autoComplete='off'
         required
       />
-      <input type='submit'
-             value='Submit'
-             className='button'
-      />
+      <button className='button'>
+        Login
+      </button>
     </form>
   )
 }

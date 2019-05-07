@@ -1,0 +1,7 @@
+.button {
+  background: $purple;
+  border: none;
+  border-bottom: .3rem solid darken($purple, 10%);
+  color: white;
+  padding: $s-size;
+}
