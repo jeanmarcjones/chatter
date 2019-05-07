@@ -4,13 +4,13 @@ const MessageList = ({ messages, messageList }) => {
   return (
     <ul
       ref={messageList}
-      className='messages'
+      className='message-list'
     >
       {
         messages.map((message, i) => (
         <li
           key={i}
-          className={message.type}
+          className={`message-list__${message.type}`}
         >
           {`${message.name}: ${message.text}`}
         </li>
