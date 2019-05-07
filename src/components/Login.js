@@ -9,7 +9,7 @@ const Login = ({ user }) => {
 
   return (
     <div className='login'>
-      <div className='container'>
+      <div className='container container--blue'>
         <h1 className='login__title'>Chatter</h1>
         <p>Please choose a username.</p>
         <LoginFormContainer />
