@@ -6,5 +6,32 @@
 }
 
 .login__title {
+  color: white;
   font-size: $l-size;
+  margin: 0 0 $m-size 0;
+}
+
+.login__subtitle {
+  color: $off-white;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__input {
+  background: $blue-dark;
+  border: none;
+  border-bottom: .3rem solid darken($blue-dark, 10%);
+  color: $off-white;
+  flex-grow: 1;
+  margin: 0 $s-size 0 0;
+  padding: $s-size;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .login__form {
+    flex-direction: row;
+  }
 }

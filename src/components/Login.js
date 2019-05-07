@@ -11,7 +11,7 @@ const Login = ({ user }) => {
     <div className='login'>
       <div className='container container--blue'>
         <h1 className='login__title'>Chatter</h1>
-        <p>Please choose a username.</p>
+        <p className='login__subtitle'>Please choose a username.</p>
         <LoginFormContainer />
       </div>
     </div>
