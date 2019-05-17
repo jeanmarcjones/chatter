@@ -5,7 +5,6 @@ import { Router } from 'react-router-dom'
 import history from './history'
 import store from './store'
 import ChatterApp from './components/ChatterApp'
-import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 
 ReactDOM.render(
