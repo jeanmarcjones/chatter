@@ -1,6 +1,6 @@
 # Chatter
 
-A chat room app created with React and Socket.io. Users can select a user name then login to the chat room. Once 
+A chat room app created with React and Socket.io. Users can select a username then login to the chat room. Once 
 connected they can send messages which can be viewed by the connected users.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
@@ -36,4 +36,4 @@ This repository is a personal project. Therefore, pull requests will not be acce
 
 ### Licence
 
-This project is licensed under the Unlicense license.
+This project is licensed under the Unlicense licence.
